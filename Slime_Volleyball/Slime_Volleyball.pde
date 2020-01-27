@@ -14,7 +14,7 @@ color yellow = color(242, 215, 16);
 
 FWorld world;
 
-PImage sky, vball, earth, moon, space;
+PImage sky, vball, earth, moon, space,sun;
 
 
 void setup() {
@@ -27,6 +27,8 @@ void setup() {
   earth.resize(75, 75);
   moon = loadImage("moon.png");
   moon.resize(75, 75);
+  sun = loadImage("sun.png");
+  sun.resize(75,75);
   space = loadImage("space.jpg");
   space.resize(400, 100);
   timer= 60;
@@ -69,6 +71,8 @@ void setup() {
   lplayer.setPosition(200, 400);
   lplayer.setFill(224, 239, 241);
   lplayer.attachImage(earth);
+  lplayer.setRotatable(false);
+  lplayer.setFriction(0.9);
   world.add(lplayer);
 
   rplayer = new FCircle(75);
@@ -76,6 +80,8 @@ void setup() {
   rplayer.setPosition(600, 400);
   rplayer.setFill(6, 71, 128);
   rplayer.attachImage(moon);
+  rplayer.setRotatable(false);
+  rplayer.setFriction(0.9);
   world.add(rplayer);
 
   ball = new FCircle(30);
